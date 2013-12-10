@@ -34,7 +34,7 @@ class __TwigTemplate_ba423df494ba733d124e439eda25752441153e9fe47b2484c0d6694649e
 <body>
 
 <header>
-    <nav class=\"navbar navbar-inverse\" role=\"navigation\" id=\"mainmenu\">
+    <nav class=\"navbar navbar-default\" role=\"navigation\" id=\"mainmenu\">
 
         <!-- Главная кнопка-название -->
         <div class=\"navbar-header\">
