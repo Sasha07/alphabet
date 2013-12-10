@@ -18,18 +18,23 @@ class __TwigTemplate_ba423df494ba733d124e439eda25752441153e9fe47b2484c0d6694649e
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        echo "<!DOCTYPE html>
+        echo "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\"
+        \"http://www.w3.org/TR/html4/loose.dtd\">
 <html>
 <head>
 
     <title>";
-        // line 5
+        // line 6
         $this->displayBlock('pageTitle', $context, $blocks);
         echo " | Азбука грамотности</title>
+
+    <meta charset=\"utf-8\">
 
     <link href=\"../bootstrap/css/bootstrap.css\" rel=\"stylesheet\">
     <link href=\"../bootstrap/css/bootstrap-responsive.css\" rel=\"stylesheet\">
     <link href=\"../css/main.css\" rel=\"stylesheet\">
+
+    <script src=\"../js/html5shiv.js\"></script>
 
 </head>
 <body>
@@ -47,7 +52,7 @@ class __TwigTemplate_ba423df494ba733d124e439eda25752441153e9fe47b2484c0d6694649e
         <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">
             <ul class=\"nav navbar-nav\">
                 <li ";
-        // line 26
+        // line 31
         if (((isset($context["currentPage"]) ? $context["currentPage"] : null) == "main")) {
             echo "class=\"active\"";
         }
@@ -70,9 +75,9 @@ class __TwigTemplate_ba423df494ba733d124e439eda25752441153e9fe47b2484c0d6694649e
 </header>
 
 ";
-        // line 44
+        // line 49
         $this->displayBlock('content', $context, $blocks);
-        // line 45
+        // line 50
         echo "
 <footer>
     <hr>
@@ -84,12 +89,12 @@ class __TwigTemplate_ba423df494ba733d124e439eda25752441153e9fe47b2484c0d6694649e
 </html>";
     }
 
-    // line 5
+    // line 6
     public function block_pageTitle($context, array $blocks = array())
     {
     }
 
-    // line 44
+    // line 49
     public function block_content($context, array $blocks = array())
     {
     }
@@ -106,6 +111,6 @@ class __TwigTemplate_ba423df494ba733d124e439eda25752441153e9fe47b2484c0d6694649e
 
     public function getDebugInfo()
     {
-        return array (  93 => 44,  88 => 5,  76 => 45,  74 => 44,  51 => 26,  27 => 5,  21 => 1,);
+        return array (  98 => 49,  93 => 6,  81 => 50,  79 => 49,  56 => 31,  28 => 6,  21 => 1,);
     }
 }
