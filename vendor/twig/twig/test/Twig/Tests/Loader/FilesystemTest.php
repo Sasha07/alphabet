@@ -22,7 +22,7 @@ class Twig_Tests_Loader_FilesystemTest extends PHPUnit_Framework_TestCase
             $loader->getCacheKey($template);
             $this->fail();
         } catch (Twig_Error_Loader $e) {
-            $this->assertNotContains('Unable to find template', $e->getMessage());
+            $this->assertNotContains('Unable to find templates', $e->getMessage());
         }
     }
 
@@ -106,7 +106,7 @@ class Twig_Tests_Loader_FilesystemTest extends PHPUnit_Framework_TestCase
             $loader->getSource('@named/nowhere.html');
         } catch (Exception $e) {
             $this->assertInstanceof('Twig_Error_Loader', $e);
-            $this->assertContains('Unable to find template "@named/nowhere.html"', $e->getMessage());
+            $this->assertContains('Unable to find templates "@named/nowhere.html"', $e->getMessage());
         }
     }
 

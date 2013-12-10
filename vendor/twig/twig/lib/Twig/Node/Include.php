@@ -51,7 +51,7 @@ class Twig_Node_Include extends Twig_Node implements Twig_NodeOutputInterface
                 ->outdent()
                 ->write("} catch (Twig_Error_Loader \$e) {\n")
                 ->indent()
-                ->write("// ignore missing template\n")
+                ->write("// ignore missing templates\n")
                 ->outdent()
                 ->write("}\n\n")
             ;
@@ -68,10 +68,10 @@ class Twig_Node_Include extends Twig_Node implements Twig_NodeOutputInterface
             ;
         } else {
             $compiler
-                ->write("\$template = \$this->env->resolveTemplate(")
+                ->write("\$templates = \$this->env->resolveTemplate(")
                 ->subcompile($this->getNode('expr'))
                 ->raw(");\n")
-                ->write('$template')
+                ->write('$templates')
             ;
         }
     }

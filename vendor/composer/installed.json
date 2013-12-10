@@ -44,7 +44,7 @@
                 "email": "armin.ronacher@active-4.com"
             }
         ],
-        "description": "Twig, the flexible, fast, and secure template language for PHP",
+        "description": "Twig, the flexible, fast, and secure templates language for PHP",
         "homepage": "http://twig.sensiolabs.org",
         "keywords": [
             "templating"
