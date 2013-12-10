@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <title>{% block pageTitle %}{% endblock %} | Азбука грамотности</title>
 
     <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -8,25 +9,23 @@
 
 </head>
 <body>
+
 <header>
     <nav class="navbar navbar-inverse" role="navigation" id="mainmenu">
 
         <!-- Главная кнопка-название -->
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Brand</a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"></button>
+            <a class="navbar-brand" href="#">Азбука грамотности</a>
         </div>
 
         <!-- Меню -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
+                <li {% if currentPage == 'main' %}class="active"{% endif %}><a href="/">Главная</a></li>
+                <li><a href="#">Страница №2</a></li>
+                <li><a href="#">Страница №3</a></li>
+                <li><a href="#">Страница №4</a></li>
             </ul>
 
             <!-- Пример формы в заголовке
@@ -41,7 +40,13 @@
     </nav>
 </header>
 
-
 {% block content %}{% endblock %}
+
+<footer>
+    <hr>
+    &copy; Андреев Александр 2013
+    <a href="/" id="footerlink">На главную</a>
+</footer>
+
 </body>
 </html>

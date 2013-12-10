@@ -21,8 +21,9 @@ class __TwigTemplate_ba423df494ba733d124e439eda25752441153e9fe47b2484c0d6694649e
         echo "<!DOCTYPE html>
 <html>
 <head>
+
     <title>";
-        // line 4
+        // line 5
         $this->displayBlock('pageTitle', $context, $blocks);
         echo " | Азбука грамотности</title>
 
@@ -31,25 +32,28 @@ class __TwigTemplate_ba423df494ba733d124e439eda25752441153e9fe47b2484c0d6694649e
 
 </head>
 <body>
+
 <header>
     <nav class=\"navbar navbar-inverse\" role=\"navigation\" id=\"mainmenu\">
 
         <!-- Главная кнопка-название -->
         <div class=\"navbar-header\">
-            <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\">
-                <span class=\"sr-only\">Toggle navigation</span>
-                <span class=\"icon-bar\"></span>
-                <span class=\"icon-bar\"></span>
-                <span class=\"icon-bar\"></span>
-            </button>
-            <a class=\"navbar-brand\" href=\"#\">Brand</a>
+            <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\"></button>
+            <a class=\"navbar-brand\" href=\"#\">Азбука грамотности</a>
         </div>
 
         <!-- Меню -->
         <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">
             <ul class=\"nav navbar-nav\">
-                <li class=\"active\"><a href=\"#\">Link</a></li>
-                <li><a href=\"#\">Link</a></li>
+                <li ";
+        // line 25
+        if (((isset($context["currentPage"]) ? $context["currentPage"] : null) == "main")) {
+            echo "class=\"active\"";
+        }
+        echo "><a href=\"/\">Главная</a></li>
+                <li><a href=\"#\">Страница №2</a></li>
+                <li><a href=\"#\">Страница №3</a></li>
+                <li><a href=\"#\">Страница №4</a></li>
             </ul>
 
             <!-- Пример формы в заголовке
@@ -64,21 +68,27 @@ class __TwigTemplate_ba423df494ba733d124e439eda25752441153e9fe47b2484c0d6694649e
     </nav>
 </header>
 
-
 ";
-        // line 45
+        // line 43
         $this->displayBlock('content', $context, $blocks);
-        // line 46
-        echo "</body>
+        // line 44
+        echo "
+<footer>
+    <hr>
+    &copy; Андреев Александр 2013
+    <a href=\"/\" id=\"footerlink\">На главную</a>
+</footer>
+
+</body>
 </html>";
     }
 
-    // line 4
+    // line 5
     public function block_pageTitle($context, array $blocks = array())
     {
     }
 
-    // line 45
+    // line 43
     public function block_content($context, array $blocks = array())
     {
     }
@@ -88,8 +98,13 @@ class __TwigTemplate_ba423df494ba733d124e439eda25752441153e9fe47b2484c0d6694649e
         return "base.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  82 => 45,  77 => 4,  72 => 46,  70 => 45,  26 => 4,  21 => 1,);
+        return array (  92 => 43,  87 => 5,  75 => 44,  73 => 43,  50 => 25,  27 => 5,  21 => 1,);
     }
 }
