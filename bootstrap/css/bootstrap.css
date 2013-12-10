@@ -5546,6 +5546,7 @@ a.list-group-item.active > .badge,
   line-height: 2.1428571435;
   color: inherit;
   background-color: #eeeeee;
+  border-radius: 6px;
 }
 
 .jumbotron h1,
@@ -5558,12 +5559,9 @@ a.list-group-item.active > .badge,
   line-height: 1.4;
 }
 
-.container .jumbotron {
-  border-radius: 6px;
-}
-
 .jumbotron .container {
   max-width: 100%;
+  border-radius: 6px;
 }
 
 @media screen and (min-width: 768px) {

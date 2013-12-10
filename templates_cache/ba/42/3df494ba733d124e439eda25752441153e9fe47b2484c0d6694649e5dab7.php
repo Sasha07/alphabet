@@ -28,6 +28,7 @@ class __TwigTemplate_ba423df494ba733d124e439eda25752441153e9fe47b2484c0d6694649e
         echo " | Азбука грамотности</title>
 
     <link href=\"../bootstrap/css/bootstrap.css\" rel=\"stylesheet\">
+    <link href=\"../bootstrap/css/bootstrap-responsive.css\" rel=\"stylesheet\">
     <link href=\"../css/main.css\" rel=\"stylesheet\">
 
 </head>
@@ -46,7 +47,7 @@ class __TwigTemplate_ba423df494ba733d124e439eda25752441153e9fe47b2484c0d6694649e
         <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">
             <ul class=\"nav navbar-nav\">
                 <li ";
-        // line 25
+        // line 26
         if (((isset($context["currentPage"]) ? $context["currentPage"] : null) == "main")) {
             echo "class=\"active\"";
         }
@@ -69,9 +70,9 @@ class __TwigTemplate_ba423df494ba733d124e439eda25752441153e9fe47b2484c0d6694649e
 </header>
 
 ";
-        // line 43
-        $this->displayBlock('content', $context, $blocks);
         // line 44
+        $this->displayBlock('content', $context, $blocks);
+        // line 45
         echo "
 <footer>
     <hr>
@@ -88,7 +89,7 @@ class __TwigTemplate_ba423df494ba733d124e439eda25752441153e9fe47b2484c0d6694649e
     {
     }
 
-    // line 43
+    // line 44
     public function block_content($context, array $blocks = array())
     {
     }
@@ -105,6 +106,6 @@ class __TwigTemplate_ba423df494ba733d124e439eda25752441153e9fe47b2484c0d6694649e
 
     public function getDebugInfo()
     {
-        return array (  92 => 43,  87 => 5,  75 => 44,  73 => 43,  50 => 25,  27 => 5,  21 => 1,);
+        return array (  93 => 44,  88 => 5,  76 => 45,  74 => 44,  51 => 26,  27 => 5,  21 => 1,);
     }
 }

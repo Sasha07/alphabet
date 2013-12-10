@@ -36,6 +36,16 @@ class __TwigTemplate_12b7f1bf9ff8e9b78d9e708911ce4ad3770dd382bb9c333591b4b33459b
     {
         // line 6
         echo "
+    <div class=\"jumbotron\">
+        Привет, Мир!
+    </div>
+
+    <div class=\"jumbotron\">
+        <div class=\"container\">
+            ...
+        </div>
+    </div>
+
 ";
     }
 
