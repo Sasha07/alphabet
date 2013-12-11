@@ -28,13 +28,13 @@ class __TwigTemplate_ba423df494ba733d124e439eda25752441153e9fe47b2484c0d6694649e
         $this->displayBlock('pageTitle', $context, $blocks);
         echo " | Азбука грамотности</title>
 
-    <meta charset=\"utf-8\">
+    <meta charset=\"utf-8\" />
 
-    <link href=\"../bootstrap/css/bootstrap.css\" rel=\"stylesheet\">
-    <link href=\"../bootstrap/css/bootstrap-responsive.css\" rel=\"stylesheet\">
-    <link href=\"../css/main.css\" rel=\"stylesheet\">
+    <link href=\"vendor/twitter/bootstrap/dist/css/bootstrap.css\" rel=\"stylesheet\" />
+    <link href=\"vendor/twitter/bootstrap/dist/css/bootstrap-theme.css\" rel=\"stylesheet\" />
+    <link href=\"css/main.css\" rel=\"stylesheet\" />
 
-    <script src=\"../js/html5shiv.js\"></script>
+    <script src=\"js/html5shiv.js\"></script>
 
 </head>
 <body>

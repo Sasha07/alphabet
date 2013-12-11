@@ -1,10 +1,6 @@
 <?php
-//require_once 'vendor/autoload.php';
-//
-//$loader = new Twig_Loader_String();
-//$twig = new Twig_Environment($loader);
-//
-//echo $twig->render('Hello {{ name }}!', array('name' => 'Sonic'));
+
+require_once 'vendor/autoload.php';
 
 
 $currentPage = 'main';
@@ -24,9 +20,6 @@ if(isset($_GET['url'])) {
 }
 
 $currentPage = strtolower($currentPage);
-
-require_once 'vendor/autoload.php';
-Twig_Autoloader::register();
 
 $twig = new Twig_Environment(new Twig_Loader_Filesystem('templates'), array(
     'cache'       => 'templates_cache',
