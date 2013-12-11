@@ -9,6 +9,7 @@
 
     <link href="vendor/twitter/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     <link href="vendor/twitter/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="css/bootstrap-theme.css" rel="stylesheet" />
     <link href="css/main.css" rel="stylesheet" />
     <link href="css/carousel.css" rel="stylesheet" />
 
@@ -37,8 +38,11 @@
 
 <div class="container-narrow">
 
+    {% if currentPage != 'main'  %}<link href="css/menu-top.css" rel="stylesheet" />{% endif %}
+
     <div class="navbar-wrapper">
-        <div class="container">
+
+        {% if currentPage == 'main'  %}<div class="container">{% endif %}
 
             <div class="navbar navbar-inverse navbar-static-top" role="navigation">
                 <div class="container">
@@ -72,7 +76,7 @@
                 </div>
             </div>
 
-        </div>
+        {% if currentPage == 'main'  %}</div>{% endif %}
     </div>
 
 

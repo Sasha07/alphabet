@@ -1,3 +1,13 @@
+body{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#footerlink{
+    float: right;
+}
+
+
 /* Начало - Фикс для JQuery Carousel */
 
 .carousel-indicators {

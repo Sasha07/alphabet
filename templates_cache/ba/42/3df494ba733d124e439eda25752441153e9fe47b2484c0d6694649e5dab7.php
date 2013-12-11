@@ -32,6 +32,7 @@ class __TwigTemplate_ba423df494ba733d124e439eda25752441153e9fe47b2484c0d6694649e
 
     <link href=\"vendor/twitter/bootstrap/dist/css/bootstrap.css\" rel=\"stylesheet\" />
     <link href=\"vendor/twitter/bootstrap/dist/css/bootstrap-theme.css\" rel=\"stylesheet\" />
+    <link href=\"css/bootstrap-theme.css\" rel=\"stylesheet\" />
     <link href=\"css/main.css\" rel=\"stylesheet\" />
     <link href=\"css/carousel.css\" rel=\"stylesheet\" />
 
@@ -60,9 +61,22 @@ class __TwigTemplate_ba423df494ba733d124e439eda25752441153e9fe47b2484c0d6694649e
 
 <div class=\"container-narrow\">
 
+    ";
+        // line 41
+        if (((isset($context["currentPage"]) ? $context["currentPage"] : null) != "main")) {
+            echo "<link href=\"css/menu-top.css\" rel=\"stylesheet\" />";
+        }
+        // line 42
+        echo "
     <div class=\"navbar-wrapper\">
-        <div class=\"container\">
 
+        ";
+        // line 45
+        if (((isset($context["currentPage"]) ? $context["currentPage"] : null) == "main")) {
+            echo "<div class=\"container\">";
+        }
+        // line 46
+        echo "
             <div class=\"navbar navbar-inverse navbar-static-top\" role=\"navigation\">
                 <div class=\"container\">
                     <div class=\"navbar-header\">
@@ -78,7 +92,7 @@ class __TwigTemplate_ba423df494ba733d124e439eda25752441153e9fe47b2484c0d6694649e
                     <div class=\"navbar-collapse collapse\">
                         <ul class=\"nav navbar-nav\">
                             <li ";
-        // line 57
+        // line 61
         if (((isset($context["currentPage"]) ? $context["currentPage"] : null) == "main")) {
             echo "class=\"active\"";
         }
@@ -100,14 +114,19 @@ class __TwigTemplate_ba423df494ba733d124e439eda25752441153e9fe47b2484c0d6694649e
                 </div>
             </div>
 
-        </div>
-    </div>
+        ";
+        // line 79
+        if (((isset($context["currentPage"]) ? $context["currentPage"] : null) == "main")) {
+            echo "</div>";
+        }
+        // line 80
+        echo "    </div>
 
 
 ";
-        // line 79
+        // line 83
         $this->displayBlock('content', $context, $blocks);
-        // line 80
+        // line 84
         echo "
 <footer>
     <hr>
@@ -126,7 +145,7 @@ class __TwigTemplate_ba423df494ba733d124e439eda25752441153e9fe47b2484c0d6694649e
     {
     }
 
-    // line 79
+    // line 83
     public function block_content($context, array $blocks = array())
     {
     }
@@ -143,6 +162,6 @@ class __TwigTemplate_ba423df494ba733d124e439eda25752441153e9fe47b2484c0d6694649e
 
     public function getDebugInfo()
     {
-        return array (  130 => 79,  125 => 5,  111 => 80,  109 => 79,  82 => 57,  27 => 5,  21 => 1,);
+        return array (  149 => 83,  144 => 5,  130 => 84,  128 => 83,  123 => 80,  119 => 79,  96 => 61,  79 => 46,  75 => 45,  70 => 42,  66 => 41,  27 => 5,  21 => 1,);
     }
 }
