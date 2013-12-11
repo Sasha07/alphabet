@@ -13,6 +13,8 @@
 
 .carousel-indicators .active {
     margin: 0 !important;
+    width: 10px !important;
+    height: 10px !important;
     background-color: #32a1d9 !important;
 }
 
