@@ -2,34 +2,47 @@
 <html>
 <head>
 
+    <base href="/" />
+
     <title>{% block pageTitle %}{% endblock %} | Азбука грамотности</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
 
-    <link href="vendor/twitter/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
-    <link href="vendor/twitter/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" />
-    <link href="css/bootstrap-theme.css" rel="stylesheet" />
-    <link href="css/main.css" rel="stylesheet" />
-    <link href="css/carousel.css" rel="stylesheet" />
+    <link href="../vendor/twitter/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="../vendor/twitter/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="../css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="../css/main.css" rel="stylesheet" />
+    <link href="../css/carousel.css" rel="stylesheet" />
+    <link href="../css/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
 
-    <script src="js/jquery.js"></script>
-    <script src="js/html5shiv.js"></script>
-    <script src="vendor/twitter/bootstrap/dist/js/bootstrap.js"></script>
 
-    <!-- Bootstrap JQuery Scripts -->
-    <script src="vendor/twitter/bootstrap/js/affix.js"></script>
-    <script src="vendor/twitter/bootstrap/js/alert.js"></script>
-    <script src="vendor/twitter/bootstrap/js/button.js"></script>
-    <script src="vendor/twitter/bootstrap/js/carousel.js"></script>
-    <script src="vendor/twitter/bootstrap/js/collapse.js"></script>
-    <script src="vendor/twitter/bootstrap/js/dropdown.js"></script>
-    <script src="vendor/twitter/bootstrap/js/modal.js"></script>
-    <script src="vendor/twitter/bootstrap/js/popover.js"></script>
-    <script src="vendor/twitter/bootstrap/js/scrollspy.js"></script>
-    <script src="vendor/twitter/bootstrap/js/tab.js"></script>
-    <script src="vendor/twitter/bootstrap/js/tooltip.js"></script>
-    <script src="vendor/twitter/bootstrap/js/transition.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/html5shiv.js"></script>
+    <script src="../vendor/twitter/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="../js/bootbox.min.js"></script>
+
+    {% if session.isAuth %}
+        <script src="../vendor/ckeditor/ckeditor.js"></script>
+
+        <script>
+            $(function() {
+                $('#save_page_link').click(function savePage(e){
+                    e.stopPropagation();
+                    e.preventDefault();
+                    $.post('save', {
+                        page: '{{ currentPage }}',
+                        content: CKEDITOR.instances.editable.getData()}, function(r) {
+                            bootbox.alert(r);
+                        }
+                    );
+                })
+            });
+
+        </script>
+
+    {% endif %}
+
 
 </head>
 <body>
@@ -38,7 +51,7 @@
 
 <div class="container-narrow">
 
-    {% if currentPage != 'main'  %}<link href="css/menu-top.css" rel="stylesheet" />{% endif %}
+    {% if currentPage != 'main'  %}<link href="../css/menu-top.css" rel="stylesheet" />{% endif %}
 
     <div class="navbar-wrapper">
 
@@ -63,6 +76,14 @@
                             <li><a href="#">Страница №3</a></li>
                             <li><a href="#">Страница №4</a></li>
                         </ul>
+
+                        <ul class="nav navbar-nav pull-right" style="margin-right:20px">
+                            {% if not session.isAuth %}
+                                <li><a href="login"><i class="fa fa-users"></i>&nbsp;&nbsp;Администрирование</a></li>
+                            {% else %}
+                                <li><a href="#" id="save_page_link"><i class="fa fa-save"></i>&nbsp;&nbsp;Сохранить страницу</a></li>
+                            {% endif %}
+                        </ul>
                     </div>
 
                     <!-- Пример формы в заголовке
@@ -79,14 +100,19 @@
         {% if currentPage == 'main'  %}</div>{% endif %}
     </div>
 
+    {% if currentPage == 'main' %}
+        {% include 'common/carousel.twig' %}
+    {% endif %}
 
-{% block content %}{% endblock %}
+    <div class="container marketing" {% if session.isAuth %}id="editable" contenteditable="true"{% endif %}>
+        {% include 'editable/'~currentPage~'.html' %}
+    </div>
 
-<footer>
-    <hr>
-    &copy; Андреев Александр 2013
-    <a href="/" id="footerlink">На главную</a>
-</footer>
+    <footer>
+        <hr>
+        &copy; Андреев Александр 2013
+        <a href="/" id="footerlink">На главную</a>
+    </footer>
 
 </div>
 

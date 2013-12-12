@@ -1,7 +1,10 @@
 <?php
 
-require_once 'vendor/autoload.php';
+session_start();
 
+if(!isset($_SESSION['isAuth'])) {
+    $_SESSION['isAuth'] = false;
+}
 
 $currentPage = 'main';
 
@@ -14,12 +17,56 @@ if(isset($_GET['url'])) {
 
     $currentPage = str_replace('/', '-', $currentPage);
 
-    if($currentPage == '' || !file_exists('templates/'.$currentPage.'.twig')) {
+    if($currentPage == 'login') {
+
+        function auth() {
+            header('WWW-Authenticate: Basic realm="Admin Area"');
+            header('HTTP/1.0 401 Unauthorized');
+            echo 'Вы не авторизованы.';
+            exit;
+        }
+
+        if(!isset($_SERVER['PHP_AUTH_USER'])) {
+            auth();
+        } else {
+            if((md5($_SERVER['PHP_AUTH_USER']) === '21232f297a57a5a743894a0e4a801fc3' && md5($_SERVER['PHP_AUTH_PW']) === '098f6bcd4621d373cade4e832627b4f6') || $_SESSION['isAuth']) {
+                if(!$_SESSION['isAuth']) {
+                    $_SESSION['isAuth'] = true;
+                    $_SESSION['ip'] = $_SERVER["SERVER_ADDR"];
+                    header('location: /');
+                    exit;
+                }
+            }
+            else {
+                auth();
+            }
+        }
+    }
+    else if($currentPage == 'save') {
+
+        $page = str_replace('/', '-',str_replace('.','',isset($_POST['page']) ? $_POST['page'] : ''));
+        $file = 'templates/editable/'.$page.'.html';
+
+        if(!file_exists($file)) {
+            die('Страница не найдена.');
+        }
+
+        if(!isset($_POST['content'])) {
+            die('Контент не найден.');
+        }
+
+        file_put_contents($file, $_POST['content']);
+        die('Страница сохранена.');
+    }
+
+    if($currentPage == '' || !file_exists('templates/'.$currentPage.'.twig') || !file_exists('templates/editable/'.$currentPage.'.html')) {
         $currentPage = 'main';
     }
 }
 
 $currentPage = strtolower($currentPage);
+
+require_once 'vendor/autoload.php';
 
 $twig = new Twig_Environment(new Twig_Loader_Filesystem('templates'), array(
     'cache'       => 'templates_cache',
@@ -29,5 +76,6 @@ $twig = new Twig_Environment(new Twig_Loader_Filesystem('templates'), array(
 $template = $twig->loadTemplate("{$currentPage}.twig");
 
 $template->display(array(
+    'session' => $_SESSION,
     'currentPage' => $currentPage
 ));
