@@ -24,3 +24,7 @@
 }
 
 /* Конец - Фикс для JQuery Carousel */
+
+.cke_button__save_icon {
+    background:url(/vendor/ckeditor/plugins/save/icons/save.png)!important;
+}

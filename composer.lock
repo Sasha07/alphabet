@@ -3,18 +3,8 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "67fc932d50e6a14e0221ae85383a1e3a",
-    "packages": [
-        {
-            "name": "ckeditor",
-            "version": "4.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ckeditor/ckeditor-releases.git",
-                "reference": "4.2/full"
-            },
-            "type": "library"
-        },
+    "hash": "510661fe7b24dd63a68fdee357651f00",
+    "packages": [  
         {
             "name": "twig/twig",
             "version": "v1.15.0",
