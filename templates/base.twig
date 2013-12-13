@@ -23,23 +23,17 @@
     <script src="../js/bootbox.min.js"></script>
 
     {% if session.isAuth %}
-        <script src="../vendor/ckeditor/ckeditor.js"></script>
 
         <script>
-            $(function() {
-                $('#save_page_link').click(function savePage(e){
-                    e.stopPropagation();
-                    e.preventDefault();
-                    $.post('save', {
-                        page: '{{ currentPage }}',
-                        content: CKEDITOR.instances.editable.getData()}, function(r) {
-                            bootbox.alert(r);
-                        }
-                    );
-                })
-            });
+
+            var adminData = {
+                currentPage : '{{ currentPage }}'
+            }
 
         </script>
+
+        <script src="../vendor/ckeditor/ckeditor.js"></script>
+        <script src="../js/admin.js"></script>
 
     {% endif %}
 
@@ -80,8 +74,6 @@
                         <ul class="nav navbar-nav pull-right" style="margin-right:20px">
                             {% if not session.isAuth %}
                                 <li><a href="login"><i class="fa fa-users"></i>&nbsp;&nbsp;Администрирование</a></li>
-                            {% else %}
-                                <li><a href="#" id="save_page_link"><i class="fa fa-save"></i>&nbsp;&nbsp;Сохранить страницу</a></li>
                             {% endif %}
                         </ul>
                     </div>
