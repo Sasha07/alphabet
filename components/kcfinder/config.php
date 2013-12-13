@@ -15,7 +15,6 @@
 // IMPORTANT!!! Do not remove uncommented settings in this file even if
 // you are using session configuration.
 // See http://kcfinder.sunhater.com/install for setting descriptions
-
 $_CONFIG = array(
 
 
@@ -24,7 +23,7 @@ $_CONFIG = array(
     'disabled' => false,
     'theme' => "oxygen",
     'uploadURL' => "/upload",
-    'uploadDir' => "",
+    'uploadDir' => __DIR__."/../../upload",
 
     'types' => array(
 
