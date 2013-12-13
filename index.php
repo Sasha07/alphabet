@@ -28,8 +28,8 @@ if(isset($_GET['url'])) {
 
         if(!isset($_SERVER['PHP_AUTH_USER'])) {
             auth();
-        } else {
-            if((md5($_SERVER['PHP_AUTH_USER']) === '21232f297a57a5a743894a0e4a801fc3' && md5($_SERVER['PHP_AUTH_PW']) === '098f6bcd4621d373cade4e832627b4f6') || $_SESSION['isAuth']) {
+                    } else {
+            if((md5($_SERVER['PHP_AUTH_USER']) === '21232f297a57a5a743894a0e4a801fc3' && md5($_SERVER['PHP_AUTH_PW']) === 'bd9570a3fd2d6cf4ca7532def9e1c88b') || $_SESSION['isAuth']) {
                 if(!$_SESSION['isAuth']) {
                     $_SESSION['isAuth'] = true;
                     $_SESSION['ip'] = $_SERVER["SERVER_ADDR"];
@@ -43,6 +43,10 @@ if(isset($_GET['url'])) {
         }
     }
     else if($currentPage == 'save') {
+
+        if(!$_SESSION['isAuth']){
+            die('Вы не авторизованы.');
+        }
 
         $page = str_replace('/', '-',str_replace('.','',isset($_POST['page']) ? $_POST['page'] : ''));
         $file = 'templates/editable/'.$page.'.html';
