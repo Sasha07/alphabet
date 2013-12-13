@@ -1,5 +1,20 @@
-#footerlink{
+body {
+    font-family:"Lucida Sans Unicode",Segoe UI,Helvetica,Arial,sans-serif;
+}
+
+.footer {
+    font-size:11px;
+    line-height:2.4em;
+    color:#eee;
+}
+.footer a {
     float: right;
+    color:#eee;
+
+}
+
+.footer a:hover {
+    color:#fff;
 }
 
 .modal-content{
@@ -58,3 +73,4 @@ footer{
     color:#000;
     text-shadow:none;
 }
+
