@@ -35,3 +35,8 @@ footer{
 .cke_button__save_icon {
     background:url(/vendor/ckeditor/plugins/save/icons/save.png)!important;
 }
+
+.bootbox .btn {
+    line-height: 0.4;
+    border-radius:6px;
+}

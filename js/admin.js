@@ -22,7 +22,15 @@ $(function() {
                     $.post('save', {
                         page: adminData.currentPage,
                         content: CKEDITOR.instances.editable.getData()}, function(r) {
-                        bootbox.alert(r);
+                        bootbox.dialog({
+                            message:r,
+                            buttons: {
+                                ok: {
+                                    label: 'OK',
+                                    className: "btn-success"
+                                }
+                            }
+                        });
                     }
                 )}
             });
