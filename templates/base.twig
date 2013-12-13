@@ -104,14 +104,16 @@
         {% include 'common/carousel.twig' %}
     {% endif %}
 
-    <div class="container marketing" {% if session.isAuth %}id="editable" contenteditable="true"{% endif %}>
+    <div class="container lead" {% if session.isAuth %}id="editable" contenteditable="true"{% endif %}>
         {% include 'editable/'~currentPage~'.html' %}
     </div>
 
-    <footer>
+    <footer {% if currentPage == 'main' %}style="margin-right: 10px; margin-left: 10px;" {% endif %}>
         <hr>
-        &copy; Андреев Александр 2013
-        <a href="/" id="footerlink">На главную</a>
+        <h5>
+            &copy; Андреев Александр 2013
+            <a href="/" id="footerlink">На главную</a>
+        </h5>
     </footer>
 
 </div>

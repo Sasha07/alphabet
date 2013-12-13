@@ -168,7 +168,7 @@ class __TwigTemplate_ba423df494ba733d124e439eda25752441153e9fe47b2484c0d6694649e
         }
         // line 106
         echo "
-    <div class=\"container marketing\" ";
+    <div class=\"container lead\" ";
         // line 107
         if ($this->getAttribute((isset($context["session"]) ? $context["session"] : null), "isAuth")) {
             echo "id=\"editable\" contenteditable=\"true\"";
@@ -181,10 +181,17 @@ class __TwigTemplate_ba423df494ba733d124e439eda25752441153e9fe47b2484c0d6694649e
         // line 109
         echo "    </div>
 
-    <footer>
+    <footer ";
+        // line 111
+        if (((isset($context["currentPage"]) ? $context["currentPage"] : null) == "main")) {
+            echo "style=\"margin-right: 10px; margin-left: 10px;\" ";
+        }
+        echo ">
         <hr>
-        &copy; Андреев Александр 2013
-        <a href=\"/\" id=\"footerlink\">На главную</a>
+        <h5>
+            &copy; Андреев Александр 2013
+            <a href=\"/\" id=\"footerlink\">На главную</a>
+        </h5>
     </footer>
 
 </div>
@@ -210,6 +217,6 @@ class __TwigTemplate_ba423df494ba733d124e439eda25752441153e9fe47b2484c0d6694649e
 
     public function getDebugInfo()
     {
-        return array (  197 => 7,  182 => 109,  179 => 108,  173 => 107,  170 => 106,  167 => 105,  164 => 104,  162 => 103,  158 => 101,  154 => 100,  138 => 86,  134 => 84,  130 => 82,  128 => 81,  116 => 74,  99 => 59,  95 => 58,  90 => 55,  86 => 54,  75 => 45,  61 => 34,  51 => 26,  49 => 25,  28 => 7,  20 => 1,);
+        return array (  204 => 7,  186 => 111,  182 => 109,  179 => 108,  173 => 107,  170 => 106,  167 => 105,  164 => 104,  162 => 103,  158 => 101,  154 => 100,  138 => 86,  134 => 84,  130 => 82,  128 => 81,  116 => 74,  99 => 59,  95 => 58,  90 => 55,  86 => 54,  75 => 45,  61 => 34,  51 => 26,  49 => 25,  28 => 7,  20 => 1,);
     }
 }

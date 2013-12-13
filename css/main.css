@@ -2,6 +2,13 @@
     float: right;
 }
 
+.modal-content{
+    border-radius: 10px;
+}
+
+footer{
+    /*margin-left: 5px;*/
+}
 
 /* Начало - Фикс для JQuery Carousel */
 
