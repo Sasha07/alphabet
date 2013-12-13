@@ -40,3 +40,21 @@ footer{
     line-height: 0.4;
     border-radius:6px;
 }
+
+.cke_focus {
+    background: #f6f6f6;
+}
+
+
+.carousel-caption {
+    background-color:#fff;
+    opacity:.8;
+    width:auto;
+    border:1px solid #fff;
+    border-radius:20px;
+}
+
+.carousel-caption h1, .carousel-caption p {
+    color:#000;
+    text-shadow:none;
+}
