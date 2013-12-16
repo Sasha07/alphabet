@@ -1,0 +1,24 @@
+{
+    "repositories": {
+        "ckeditor": {
+            "type": "package",
+            "package": {
+                "name": "ckeditor",
+                "version": "4.3.2",
+                "source": {
+                    "url": "https://github.com/ckeditor/ckeditor-dev.git",
+                    "type": "git",
+                    "reference": "4.3/full"
+                }
+            }
+        }
+    },
+
+    "require": {
+        "twig/twig": "1.*",
+        "twitter/bootstrap": "v3.0.3",
+        "ckeditor": "4.3.*",
+        "doctrine/orm": "*"
+    }
+
+}
