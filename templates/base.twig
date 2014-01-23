@@ -21,9 +21,16 @@
     <script src="../js/html5shiv.js"></script>
     <script src="../vendor/twitter/bootstrap/dist/js/bootstrap.js"></script>
     <script src="../js/bootbox.min.js"></script>
-
+    
+    {% if currentPage != 'badscreen'  %}  
+        <script>
+            if(screen.width < 1280 && screen.height < 1024){
+                window.location = "badscreen";
+            }
+        </script>
+    {% endif %}
+    
     {% if session.isAuth %}
-
         <script>
 
             var adminData = {
@@ -31,10 +38,8 @@
             }
 
         </script>
-
         <script src="../vendor/ckeditor/ckeditor.js"></script>
         <script src="../js/admin.js"></script>
-
     {% endif %}
 
 
@@ -64,7 +69,7 @@
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
                             <li {% if currentPage == 'main' %}class="active"{% endif %}><a href="/">Главная</a></li>
-                            <li><a href="second">Страница №2</a></li>
+                            <li {% if currentPage == 'second' %}class="active"{% endif %}><a href="second">Азбука компьютерной грамотности</a></li>
                             <li><a href="#">Страница №3</a></li>
                             <li><a href="#">Страница №4</a></li>
                         </ul>

@@ -14,7 +14,7 @@ class Auth {
         if(!isset($_SESSION['isAuth'])) {
 
             $_SESSION['isAuth'] = false;
-            $_SESSION['KCFINDER'] = array(['disabled'] => true);
+            @ $_SESSION['KCFINDER'] = array(['disabled'] => true);
 
         }
     }
