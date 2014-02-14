@@ -1,3 +1,4 @@
+
 body {
     font-family:"Lucida Sans Unicode",Segoe UI,Helvetica,Arial,sans-serif;
 }
@@ -25,6 +26,12 @@ footer{
     /*margin-left: 5px;*/
 }
 
+
+
+
+
+
+
 /* Начало - Фикс для JQuery Carousel */
 
 .carousel-indicators {
@@ -46,6 +53,12 @@ footer{
 }
 
 /* Конец - Фикс для JQuery Carousel */
+
+
+
+
+
+
 
 .cke_button__save_icon {
     background:url(/vendor/ckeditor/plugins/save/icons/save.png)!important;
@@ -77,4 +90,66 @@ footer{
 @font-face {
     font-family: Giger; 
     src: url(/css/giger.otf); 
+}
+
+.sidebar-hr-nm{
+    width: 90%;
+    border-top: 1px solid #808080;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#sidebar-wrapper{
+    left: 0;
+    transition: all 0.35s ease 0.005s;
+}
+
+#sidebar-hidden{
+    left: 5px;
+    height: 100%;
+    width: 45px;
+    z-index: 1000;
+    overflow-y: auto;
+    position: fixed;
+    transition: all 0.4s ease 0s;
+}
+
+.v-middle{
+    vertical-align: middle;
+}
+
+#openMenu{
+    color: black;
+    cursor: pointer;
+}
+
+#imgOpen{
+    position: absolute;
+}
+
+#imgClose{
+    visibility: hidden;
+    position: absolute;
+}
+
+.sidebar-nav li a{
+    color: #ccc !important;
+}
+
+.sidebar-nav li a:hover{
+    color: #ffefd5 !important;
+}
+
+.sidebar-brand a:hover{
+    color: #ffefd5;
+}
+
+.sidebar-nav-bottom{
+    position: absolute;
+    bottom: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #ccc;
+    font-size: small;
+    text-align: center;
 }
